@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ProgressRing } from './ProgressRing';
+import { ProgressRing } from './ProgressRing.tsx';
 import { ArrowRight, Puzzle, XCircle, CheckCircle2 } from 'lucide-react';
 
 export const MistakeSection: React.FC = () => {
@@ -43,7 +43,6 @@ export const MistakeSection: React.FC = () => {
         
         <div className="bg-blue-50/50 p-6 md:p-10 rounded-[1.5rem] md:rounded-[3rem] border border-blue-100 flex flex-col md:flex-row items-center md:items-start space-y-3 md:space-y-0 md:space-x-8 text-center md:text-left">
           <div className="bg-white p-2 md:p-4 rounded-lg md:rounded-2xl shadow-sm text-apple-blue shrink-0">
-            {/* Fixed: Replaced size and md:size with responsive className */}
             <Puzzle strokeWidth={1.5} className="w-5 h-5 md:w-8 md:h-8" />
           </div>
           <div>
@@ -61,37 +60,29 @@ export const MistakeSection: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-1">
-          {/* Wrong Path */}
           <div className="bg-gray-50 p-6 md:p-10 rounded-[1.5rem] md:rounded-[3rem] border border-gray-200 space-y-4 md:space-y-8 grayscale opacity-60">
             <div className="flex items-center space-x-3 justify-center md:justify-start text-gray-500 font-black uppercase tracking-widest text-[8px] md:text-[10px]">
-              {/* Fixed: Removed invalid md:size */}
               <XCircle className="w-3.5 h-3.5 md:w-[18px] md:h-[18px]" />
               <span>Типичный путь (95%):</span>
             </div>
             <div className="flex flex-col space-y-2 md:space-y-4 items-center">
               <div className="w-full bg-white px-3 py-2 rounded-xl border border-gray-200 text-center font-semibold text-xs md:text-sm">Контент</div>
-              {/* Fixed: Replaced size and md:size with responsive className */}
               <ArrowRight className="text-gray-300 rotate-90 w-3.5 h-3.5 md:w-4 md:h-4" />
               <div className="w-full bg-white px-3 py-2 rounded-xl border border-gray-200 text-center font-semibold text-xs md:text-sm">Технологии</div>
-              {/* Fixed: Replaced size and md:size with responsive className */}
               <ArrowRight className="text-gray-300 rotate-90 w-3.5 h-3.5 md:w-4 md:h-4" />
               <div className="text-gray-400 font-bold py-1 text-sm md:text-xl">Слив времени 📉</div>
             </div>
           </div>
 
-          {/* Right Path */}
           <div className="bg-white p-6 md:p-10 rounded-[1.5rem] md:rounded-[3rem] border-2 border-apple-blue shadow-lg shadow-blue-100 space-y-4 md:space-y-8 md:-translate-y-2">
             <div className="flex items-center space-x-3 justify-center md:justify-start text-apple-blue font-black uppercase tracking-widest text-[8px] md:text-[10px]">
-              {/* Fixed: Removed invalid md:size */}
               <CheckCircle2 className="w-3.5 h-3.5 md:w-[18px] md:h-[18px]" />
               <span>Стратегический путь:</span>
             </div>
             <div className="flex flex-col space-y-2 md:space-y-4 items-center">
               <div className="w-full bg-apple-blue text-white px-3 py-2 rounded-xl shadow-md font-black text-center text-xs md:text-sm">Бизнес-модель</div>
-              {/* Fixed: Replaced size and md:size with responsive className */}
               <ArrowRight className="text-blue-200 rotate-90 w-3.5 h-3.5 md:w-4 md:h-4" />
               <div className="w-full bg-white px-3 py-2 rounded-xl border border-blue-100 text-center font-bold text-apple-blue text-xs md:text-sm">Система продаж</div>
-              {/* Fixed: Replaced size and md:size with responsive className */}
               <ArrowRight className="text-blue-200 rotate-90 w-3.5 h-3.5 md:w-4 md:h-4" />
               <div className="w-full bg-white px-3 py-2 rounded-xl border border-blue-100 text-center font-bold text-apple-blue text-xs md:text-sm">Продукт & Контент</div>
             </div>
