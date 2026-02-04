@@ -1,15 +1,15 @@
 
 import React, { useState, useEffect } from 'react';
-import { Hero } from './components/Hero';
-import { Callout } from './components/Callout';
-import { CardGrid } from './components/CardGrid';
-import { EarningsChart } from './components/EarningsChart';
-import { MistakeSection } from './components/MistakeSection';
-import { SolutionSection } from './components/SolutionSection';
-import { RoadmapSection } from './components/RoadmapSection';
-import { OfferSection } from './components/OfferSection';
-import { DiagnosticSection } from './components/DiagnosticSection';
-import { FinalSection } from './components/FinalSection';
+import { Hero } from './components/Hero.tsx';
+import { Callout } from './components/Callout.tsx';
+import { CardGrid } from './components/CardGrid.tsx';
+import { EarningsChart } from './components/EarningsChart.tsx';
+import { MistakeSection } from './components/MistakeSection.tsx';
+import { SolutionSection } from './components/SolutionSection.tsx';
+import { RoadmapSection } from './components/RoadmapSection.tsx';
+import { OfferSection } from './components/OfferSection.tsx';
+import { DiagnosticSection } from './components/DiagnosticSection.tsx';
+import { FinalSection } from './components/FinalSection.tsx';
 
 const App: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
