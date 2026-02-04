@@ -1,8 +1,8 @@
 
 import React, { useState, useEffect } from 'react';
-import { LongreadOne } from './pages/LongreadOne.tsx';
-import { LongreadTwo } from './pages/LongreadTwo.tsx';
-import { LongreadThree } from './pages/LongreadThree.tsx';
+import { LongreadOne } from './pages/LongreadOne';
+import { LongreadTwo } from './pages/LongreadTwo';
+import { LongreadThree } from './pages/LongreadThree';
 
 const App: React.FC = () => {
   const [currentPath, setCurrentPath] = useState(window.location.hash || '#one');
