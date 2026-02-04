@@ -1,140 +1,44 @@
 
 import React, { useState, useEffect } from 'react';
-import { Hero } from './components/Hero.tsx';
-import { Callout } from './components/Callout.tsx';
-import { CardGrid } from './components/CardGrid.tsx';
-import { EarningsChart } from './components/EarningsChart.tsx';
-import { MistakeSection } from './components/MistakeSection.tsx';
-import { SolutionSection } from './components/SolutionSection.tsx';
-import { RoadmapSection } from './components/RoadmapSection.tsx';
-import { OfferSection } from './components/OfferSection.tsx';
-import { DiagnosticSection } from './components/DiagnosticSection.tsx';
-import { FinalSection } from './components/FinalSection.tsx';
+import { LongreadOne } from './pages/LongreadOne.tsx';
+import { LongreadTwo } from './pages/LongreadTwo.tsx';
+import { LongreadThree } from './pages/LongreadThree.tsx';
 
 const App: React.FC = () => {
-  const [scrolled, setScrolled] = useState(false);
+  const [currentPath, setCurrentPath] = useState(window.location.hash || '#one');
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+    const handleHashChange = () => {
+      setCurrentPath(window.location.hash || '#one');
+      window.scrollTo(0, 0); 
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
+  const renderPage = () => {
+    switch (currentPath) {
+      case '#one':
+        return <LongreadOne />;
+      case '#two':
+        return <LongreadTwo />;
+      case '#three':
+        return <LongreadThree />;
+      default:
+        return <LongreadOne />;
+    }
+  };
+
   return (
-    <div className="min-h-screen selection:bg-blue-100 flex flex-col items-center">
-      {/* iOS Style Sticky Header */}
-      <header 
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b ${
-          scrolled ? 'bg-white/85 ios-blur border-gray-100 py-2 md:py-3 shadow-sm' : 'bg-transparent border-transparent py-4 md:py-6'
-        }`}
-      >
-        <div className="max-w-screen-lg mx-auto px-5 flex justify-between items-center w-full">
-          <span className={`font-semibold tracking-tight text-sm md:text-base transition-all duration-500 truncate max-w-[200px] md:max-w-none ${scrolled ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'}`}>
-            AI Монетизация
-          </span>
-          <div className="bg-apple-blue text-white px-4 md:px-5 py-1.5 md:py-2 rounded-full text-xs md:text-sm font-semibold shadow-md hover:bg-blue-600 active:scale-95 transition-all cursor-pointer whitespace-nowrap">
-            Начать путь
-          </div>
-        </div>
-      </header>
-
-      <main className="w-full">
-        <Hero 
-          time="3:17 ночи."
-          title="Ты лежишь в темноте и листаешь телефон..."
-          subtitle="Завтра снова на работу. Снова тот же офис, те же лица, тот же потолок над головой."
-        />
-
-        {/* Content Container - Reduced spacing for mobile (12 -> 32) */}
-        <div className="max-w-[760px] mx-auto px-5 md:px-6 space-y-12 md:space-y-32 mb-16 md:mb-40">
-          
-          {/* Section 1: Intro */}
-          <section className="space-y-6 md:space-y-12 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-            <Callout>
-              «Если я не найду способ делать хотя бы $5000 в месяц на чём-то своём — так и просижу здесь до пенсии».
-            </Callout>
-
-            <p className="text-[17px] md:text-[20px] text-gray-700 leading-[1.6] md:leading-[1.7] font-normal tracking-tight">
-              Знакомо? Ты уже видел эти истории. Парни и девушки пишут, что зарабатывают тысячи долларов на AI-моделях. Кто-то хвастается скринами выплат. Кто-то рассказывает, как уволился с работы через три месяца.
-            </p>
-
-            <div className="space-y-6 md:space-y-10">
-              <h3 className="text-xl md:text-2xl font-bold tracking-tight text-gray-900 border-l-4 border-apple-blue pl-4 md:pl-6">Ты пробовал разобраться сам...</h3>
-              <CardGrid />
-            </div>
-
-            <div className="pt-2 md:pt-8 space-y-6 md:space-y-10">
-               <div className="text-center space-y-2 md:space-y-3">
-                  <h3 className="text-xl md:text-3xl font-bold tracking-tight text-gray-900">Цель: $5,000 / месяц</h3>
-                  <p className="text-gray-500 text-sm md:text-lg">Это не просто цифра, это твоя свобода</p>
-               </div>
-               <EarningsChart />
-            </div>
-          </section>
-
-          {/* Section 2: Why 95% fail */}
-          <section className="pt-12 md:pt-24 space-y-8 md:space-y-16 border-t border-gray-100">
-            <h2 className="text-2xl md:text-5xl font-black tracking-tight text-gray-900 leading-[1.15]">
-              Почему 95% новичков <span className="text-apple-blue">ошибаются</span>
-            </h2>
-            <MistakeSection />
-          </section>
-
-          {/* Section 3: Solutions */}
-          <section className="pt-12 md:pt-24 space-y-8 md:space-y-16 border-t border-gray-100">
-            <h2 className="text-2xl md:text-5xl font-black tracking-tight text-gray-900 leading-[1.15]">
-              Возможности в <span className="text-apple-blue">2026 году</span>
-            </h2>
-            <SolutionSection />
-          </section>
-
-          {/* Section 4: Roadmap */}
-          <section className="pt-12 md:pt-24 space-y-8 md:space-y-16 border-t border-gray-100">
-            <h2 className="text-2xl md:text-5xl font-black tracking-tight text-gray-900 leading-[1.15]">
-              Пошаговая карта <span className="text-apple-blue">«0 → $5000/мес»</span>
-            </h2>
-
-            <p className="text-[17px] md:text-[20px] text-gray-700 leading-[1.6] md:leading-[1.7]">
-              Сейчас я дам тебе то, за чем ты сюда пришёл — конкретный алгоритм действий. <br className="hidden md:block"/><br className="hidden md:block"/>
-              Чёткая последовательность шагов, которая работает.
-            </p>
-
-            <RoadmapSection />
-          </section>
-
-          {/* Section 5: The Offer */}
-          <section className="pt-12 md:pt-24 space-y-8 md:space-y-16 border-t border-gray-100">
-            <h2 className="text-2xl md:text-5xl font-black tracking-tight text-gray-900 leading-[1.15]">
-              «Окупаемый <span className="text-apple-blue">порог входа</span>»
-            </h2>
-            <OfferSection />
-          </section>
-
-          {/* Section 6: Diagnostic */}
-          <section className="pt-12 md:pt-24 space-y-8 md:space-y-16 border-t border-gray-100">
-            <h2 className="text-2xl md:text-5xl font-black tracking-tight text-gray-900 leading-[1.15]">
-              Бесплатная <span className="text-apple-blue">диагностика</span>
-            </h2>
-            <DiagnosticSection />
-          </section>
-
-          {/* Section 7: Final FOMO & Guarantee */}
-          <section className="pt-12 md:pt-24 space-y-8 md:space-y-16 border-t border-gray-100">
-            <h2 className="text-2xl md:text-5xl font-black tracking-tight text-gray-900 leading-[1.15]">
-              Наши <span className="text-apple-blue">гарантии</span>
-            </h2>
-            <FinalSection />
-          </section>
-        </div>
-      </main>
+    <div className="min-h-screen">
+      {renderPage()}
       
-      <footer className="w-full bg-white border-t border-gray-100 py-8 md:py-16">
-        <div className="max-w-[760px] mx-auto px-6 text-center text-gray-400 text-[9px] md:text-xs font-medium tracking-widest uppercase">
-          © {new Date().getFullYear()} AI MODEL BUSINESS GUIDE • ВСЕ ПРАВА ЗАЩИЩЕНЫ
-        </div>
-      </footer>
+      <nav className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[60] bg-white/80 ios-blur px-4 py-2 rounded-full border border-gray-200 shadow-2xl flex space-x-4">
+        <a href="#one" className={`text-[10px] font-bold uppercase tracking-widest ${currentPath === '#one' ? 'text-apple-blue' : 'text-gray-400'}`}>Статья 1</a>
+        <a href="#two" className={`text-[10px] font-bold uppercase tracking-widest ${currentPath === '#two' ? 'text-apple-blue' : 'text-gray-400'}`}>Статья 2</a>
+        <a href="#three" className={`text-[10px] font-bold uppercase tracking-widest ${currentPath === '#three' ? 'text-apple-blue' : 'text-gray-400'}`}>Статья 3</a>
+      </nav>
     </div>
   );
 };
