@@ -25,7 +25,7 @@ export const LongreadOne: React.FC = () => {
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b ${scrolled ? 'bg-white/85 ios-blur border-gray-100 py-2 md:py-3 shadow-sm' : 'bg-transparent border-transparent py-4 md:py-6'}`}>
         <div className="max-w-screen-lg mx-auto px-5 flex justify-between items-center w-full">
           <span className={`font-semibold tracking-tight text-sm md:text-base transition-all duration-500 truncate ${scrolled ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'}`}>
-            AI Монетизация
+            Проверенная система 2026: Пошаговая карта выхода на доход через AI-модели за 7 дней
           </span>
           <a 
   href="https://forms.gle/LHVqv8GUBi88BYHK6" // 👈 Укажите здесь вашу ссылку
