@@ -82,19 +82,26 @@ export const FinalSection: React.FC = () => {
         <div className="text-center pt-8 md:pt-16 space-y-12 md:space-y-16">
            <p className="text-2xl md:text-3xl font-black tracking-tight text-gray-900 italic">Выбор за тобой.</p>
            
-           <div className="flex flex-col items-center space-y-8 md:space-y-10">
-            <button className="w-full md:w-auto bg-apple-blue text-white px-8 md:px-14 py-5 md:py-7 rounded-full text-lg md:text-2xl font-black shadow-2xl shadow-blue-200 hover:bg-blue-600 active:scale-95 transition-all flex items-center justify-center space-x-3 md:space-x-5 group uppercase tracking-tight">
-              {/* Fixed: Replaced size and md:size with responsive className */}
-              <ClipboardList strokeWidth={2.5} className="w-6 h-6 md:w-8 md:h-8" />
-              <span>Записаться на разбор</span>
-              {/* Fixed: Replaced size and md:size with responsive className */}
-              <ArrowRight className="group-hover:translate-x-2 transition-transform duration-300 w-6 h-6 md:w-8 md:h-8" />
-            </button>
-            <div className="space-y-2 w-full max-w-[200px] md:max-w-[280px]">
-              <p className="text-gray-400 font-black uppercase tracking-[0.2em] text-[9px] md:text-[11px]">Бесплатная сессия</p>
-              <div className="h-1 w-full bg-blue-100 rounded-full overflow-hidden">
-                <div className="h-full bg-apple-blue w-1/3 animate-[shimmer_2s_infinite]"></div>
-              </div>
+          <div className="flex flex-col items-center space-y-8 md:space-y-10">
+  {/* 👇 Заменили button на a */}
+  <a 
+    href="https://forms.gle/cVbfiymmPXc9UYTs6" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="w-full md:w-auto bg-apple-blue text-white px-8 md:px-14 py-5 md:py-7 rounded-full text-lg md:text-2xl font-black shadow-2xl shadow-blue-200 hover:bg-blue-600 active:scale-95 transition-all flex items-center justify-center space-x-3 md:space-x-5 group uppercase tracking-tight"
+  >
+    <ClipboardList strokeWidth={2.5} className="w-6 h-6 md:w-8 md:h-8" />
+    <span>Записаться на разбор</span>
+    <ArrowRight className="group-hover:translate-x-2 transition-transform duration-300 w-6 h-6 md:w-8 md:h-8" />
+  </a>
+
+  <div className="space-y-2 w-full max-w-[200px] md:max-w-[280px]">
+    <p className="text-gray-400 font-black uppercase tracking-[0.2em] text-[9px] md:text-[11px]">Бесплатная сессия</p>
+    <div className="h-1 w-full bg-blue-100 rounded-full overflow-hidden">
+      <div className="h-full bg-apple-blue w-1/3 animate-[shimmer_2s_infinite]"></div>
+    </div>
+  </div>
+</div>
             </div>
           </div>
         </div>
