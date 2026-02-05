@@ -27,9 +27,14 @@ export const LongreadOne: React.FC = () => {
           <span className={`font-semibold tracking-tight text-sm md:text-base transition-all duration-500 truncate ${scrolled ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'}`}>
             AI Монетизация
           </span>
-          <div className="bg-apple-blue text-white px-4 md:px-5 py-1.5 md:py-2 rounded-full text-xs md:text-sm font-semibold shadow-md hover:bg-blue-600 active:scale-95 transition-all cursor-pointer whitespace-nowrap">
-            Начать путь
-          </div>
+          <a 
+  href="https://ваша-ссылка.com" // 👈 Укажите здесь вашу ссылку
+  target="_blank" // Опционально: откроет ссылку в новой вкладке
+  rel="noopener noreferrer" // Опционально: для безопасности при target="_blank"
+  className="bg-apple-blue text-white px-4 md:px-5 py-1.5 md:py-2 rounded-full text-xs md:text-sm font-semibold shadow-md hover:bg-blue-600 active:scale-95 transition-all cursor-pointer whitespace-nowrap"
+>
+  Начать путь
+</a>
         </div>
       </header>
 
