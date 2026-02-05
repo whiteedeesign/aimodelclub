@@ -115,15 +115,22 @@ export const DiagnosticSection: React.FC = () => {
           <h3 className="text-2xl md:text-3xl font-black tracking-tight text-gray-900 leading-tight">Запишись за 2 минуты</h3>
           
           <div className="flex flex-col items-center space-y-6">
-            <button className="w-full md:w-auto bg-apple-blue text-white px-8 md:px-12 py-5 md:py-6 rounded-full text-lg md:text-2xl font-black shadow-xl shadow-blue-300 hover:bg-blue-600 active:scale-95 transition-all flex items-center justify-center space-x-3 md:space-x-4 group uppercase tracking-tight">
-              {/* Fixed: Replaced size and md:size with responsive className */}
-              <ClipboardList className="w-6 h-6 md:w-7 md:h-7" />
-              <span>Заполнить анкету</span>
-              {/* Fixed: Replaced size and md:size with responsive className */}
-              <ArrowRight className="group-hover:translate-x-1 transition-transform w-6 h-6 md:w-7 md:h-7" />
-            </button>
-            <p className="text-[10px] md:text-xs text-gray-400 font-black uppercase tracking-[0.2em]">Стратегический созвон бесплатно</p>
-          </div>
+  <a 
+    href="https://forms.gle/NwxfLApRXV1PBqzc8" // 1. Сюда вставляем ссылку
+    target="_blank" // 2. (Опционально) Открыть в новой вкладке
+    rel="noopener noreferrer" // 3. (Опционально) Безопасность для новой вкладки
+    className="w-full md:w-auto bg-apple-blue text-white px-8 md:px-12 py-5 md:py-6 rounded-full text-lg md:text-2xl font-black shadow-xl shadow-blue-300 hover:bg-blue-600 active:scale-95 transition-all flex items-center justify-center space-x-3 md:space-x-4 group uppercase tracking-tight"
+  >
+    {/* Иконки и текст остаются без изменений */}
+    <ClipboardList className="w-6 h-6 md:w-7 md:h-7" />
+    <span>Заполнить анкету</span>
+    <ArrowRight className="group-hover:translate-x-1 transition-transform w-6 h-6 md:w-7 md:h-7" />
+  </a>
+  
+  <p className="text-[10px] md:text-xs text-gray-400 font-black uppercase tracking-[0.2em]">
+    Стратегический созвон бесплатно
+  </p>
+</div>
         </div>
       </div>
     </div>
