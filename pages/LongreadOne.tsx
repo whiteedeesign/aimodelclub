@@ -28,7 +28,7 @@ export const LongreadOne: React.FC = () => {
             AI Монетизация
           </span>
           <a 
-  href="https://ваша-ссылка.com" // 👈 Укажите здесь вашу ссылку
+  href="https://forms.gle/LHVqv8GUBi88BYHK6" // 👈 Укажите здесь вашу ссылку
   target="_blank" // Опционально: откроет ссылку в новой вкладке
   rel="noopener noreferrer" // Опционально: для безопасности при target="_blank"
   className="bg-apple-blue text-white px-4 md:px-5 py-1.5 md:py-2 rounded-full text-xs md:text-sm font-semibold shadow-md hover:bg-blue-600 active:scale-95 transition-all cursor-pointer whitespace-nowrap"
