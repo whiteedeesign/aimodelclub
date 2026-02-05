@@ -100,8 +100,6 @@ export const FinalSection: React.FC = () => {
     <div className="h-1 w-full bg-blue-100 rounded-full overflow-hidden">
       <div className="h-full bg-apple-blue w-1/3 animate-[shimmer_2s_infinite]"></div>
     </div>
-  </div>
-</div>
             </div>
           </div>
         </div>
